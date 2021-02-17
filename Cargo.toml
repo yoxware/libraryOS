@@ -1,0 +1,15 @@
+[package]
+name = "library_os"
+version = "0.1.0"
+authors = ["yoxware <wurze@protonmail.ch>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+#done to prevent stack unwindling "eh_personality" lang item since we dont have OS libraries (yet)
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
